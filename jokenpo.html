@@ -14,10 +14,24 @@
         }
 
         function vencedor(escolhaUsu, escolhaPc){
-            if(escolhaUsu == escolhaPc){
+            if(escolhaUsu == 'Pedra' && escolhaPc == 'Tesoura' || escolhaUsu == 'Papel' && escolhaPc == 'Pedra' || escolhaUsu == 'Tesoura' && escolhaPc == 'Papel'){
+                alert(`Pc escolheu ${escolhaPc} e usuário escolheu ${escolhaUsu}. Usuário VENCEU!`)
+                return ganhador = 1
+            }else if(escolhaPc == 'Pedra' && escolhaUsu == 'Tesoura' || escolhaPc == 'Papel' && escolhaUsu == 'Pedra' || escolhaPc == 'Tesoura' && escolhaUsu == 'Papel'){
+                alert(`Pc escolheu ${escolhaPc} e usuário escolheu ${escolhaUsu}. Pc VENCEU!`)
+                return ganhador = 2
+            }else{
                 alert(`Pc escolheu ${escolhaPc} e usuário escolheu ${escolhaUsu}. Empate!`)
+                return ganhador = 0
             }
         }
+        do{jogadaUsu = prompt(`Digite sua jogada`)
+        
+        vencedor(jogadaUsu, jogadaPc)
+
+        opcao = prompt(`Gostaria de jogar novamente? (1) - Sim | (2) - Não`)
+
+        }while(opcao != 2)
     </script>
 </body>
 </html>
